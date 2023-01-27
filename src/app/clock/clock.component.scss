@@ -1,0 +1,7 @@
+
+@import '/src/styles.scss';
+
+.clock-container {
+  @include counter;
+  margin-bottom: 205px;
+}
