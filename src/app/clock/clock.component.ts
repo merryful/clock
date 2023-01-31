@@ -7,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClockComponent implements OnInit {
   currentTime = new Date();
+  time: string;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
      setInterval(() => {
       this.currentTime = new Date();
     }, 1000 );
   }
+
 }

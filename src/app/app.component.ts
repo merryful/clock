@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TimerService } from './timer.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   isTimer : boolean = false;
 
-  constructor() {
+  constructor(private timerService: TimerService) {
   }
 
   switchToTimer() {

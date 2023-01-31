@@ -1,10 +1,9 @@
-import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-timer',
   templateUrl: './timer.component.html',
-  styleUrls: ['./timer.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./timer.component.scss']
 })
 export class TimerComponent implements OnInit {
   @ViewChild('timeInput') timeInputRef: ElementRef;
@@ -12,13 +11,12 @@ export class TimerComponent implements OnInit {
   alarmSound = new Audio("./assets/interface-hint-notification.wav");
 
   time: number;
-  timeTitle: number;
   timeInterval: any;
   isPauseActive = false;
   isStartDisabled = false;
   isPauseDisabled = false;
 
-  constructor() { }
+  constructor() {}
 
   preventNegative(event: any) {
     if (event.target.value < 0) {
@@ -78,9 +76,7 @@ export class TimerComponent implements OnInit {
     this.time = 0;
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
 
 
