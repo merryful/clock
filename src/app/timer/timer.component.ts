@@ -5,6 +5,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   templateUrl: './timer.component.html',
   styleUrls: ['./timer.component.scss']
 })
+
 export class TimerComponent implements OnInit {
   @ViewChild('timeInput') timeInputRef: ElementRef;
 
@@ -16,7 +17,9 @@ export class TimerComponent implements OnInit {
   isStartDisabled = false;
   isPauseDisabled = false;
 
-  constructor() {}
+  constructor() {
+    this.time = 0;
+  }
 
   preventNegative(event: any) {
     if (event.target.value < 0) {
@@ -43,12 +46,14 @@ export class TimerComponent implements OnInit {
       }
     }, 1000);
     this.clearInput();
+
   }
 
   stopTimer() {
     this.isPauseActive = true;
     this.isStartDisabled = false;
     this.isPauseDisabled = true;
+    this.alarmSound.pause();
     clearInterval(this.timeInterval);
   }
 
@@ -70,10 +75,6 @@ export class TimerComponent implements OnInit {
 
   clearInput() {
     this.timeInputRef.nativeElement.value = "";
-  }
-
-  ngAfterViewInit() {
-    this.time = 0;
   }
 
   ngOnInit() {}

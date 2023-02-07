@@ -46,7 +46,7 @@ button {
   }
 }
 
-.active .pause-btn {
+ .active .pause-btn {
     @include activeIcon;
 }
 
